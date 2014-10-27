@@ -11,7 +11,7 @@ public static int[] intarr;
 	public static void main (String[] args) {
 		intarr = new int[100];
 		for (int i = 0; i < intarr.length; i++) {
-			intarr[i] = (int)(Math.ceil(Math.random() * 126.0d)) + 24;
+			intarr[i] = (int)(Math.ceil(Math.random() * 76.0d)) + 74;
 		}
 		System.out.println(find(120));		//does 120 exist in the array
 		System.out.println(maxVal());		//print max value in array
