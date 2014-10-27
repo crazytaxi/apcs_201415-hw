@@ -13,9 +13,11 @@ public static int[] intarr;
 		for (int i = 0; i < intarr.length; i++) {
 			intarr[i] = (int)(Math.ceil(Math.random() * 126.0d)) + 24;
 		}
+		System.out.println(find(120));		//does 120 exist in the array
+		System.out.println(maxVal());		//print max value in array
 	}
 
-	public int find (int x) {
+	public static int find (int x) {
 		for (int i = 0; i < intarr.length; i++) {
 			if (intarr[i] == x) {
 				return i;
@@ -24,7 +26,7 @@ public static int[] intarr;
 		return -1;
 	}
 
-	public int maxVal () {
+	public static int maxVal () {
 		int mV = intarr[0];
 		for (int i = 1; i < intarr.length; i++) {
 			if (intarr[i] > mV) {
