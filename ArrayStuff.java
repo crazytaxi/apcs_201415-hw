@@ -8,13 +8,7 @@ public class ArrayStuff {
 	public static void main (String[] args) {
 		int[] intarr = new int[100];
 		for (int i = 0; i < intarr.length; i++) {
-			intarr[i] = (int)(Math.floor(Math.random() * 125.0d)) + 25;
-		}
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				System.out.print(intarr[(i * 10) + j] + " ");
-			}
-			System.out.println();
+			intarr[i] = (int)(Math.ceil(Math.random() * 126.0d)) + 24;
 		}
 	}
 }
