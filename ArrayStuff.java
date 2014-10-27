@@ -7,8 +7,9 @@ HW 14 - added find() and max val value
 */
 
 public class ArrayStuff {
+public static int[] intarr;
 	public static void main (String[] args) {
-		int[] intarr = new int[100];
+		intarr = new int[100];
 		for (int i = 0; i < intarr.length; i++) {
 			intarr[i] = (int)(Math.ceil(Math.random() * 126.0d)) + 24;
 		}
@@ -26,7 +27,7 @@ public class ArrayStuff {
 	public int maxVal () {
 		int mV = intarr[0];
 		for (int i = 1; i < intarr.length; i++) {
-			if ( intarr[i] > maxVal) {
+			if (intarr[i] > mV) {
 				mV = intarr[i];		//found new value 
 			}
 		}
