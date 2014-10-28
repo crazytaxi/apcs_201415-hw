@@ -15,6 +15,7 @@ public static int[] intarr;
 		}
 		System.out.println(find(120));		//does 120 exist in the array
 		System.out.println(maxVal());		//print max value in array
+		System.out.println(freq(2));
 	}
 
 	public static int find (int x) {
@@ -34,5 +35,15 @@ public static int[] intarr;
 			}
 		}
 		return mV;
+	}
+
+	public static int freq(int x) {
+		int f = 0;
+		for (int i = 0; i < intarr.length; i++) {
+			if (intarr[x] == intarr[i]) {
+				++f;
+			}
+		}
+		return f;
 	}
 }
