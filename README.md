@@ -1,4 +1,4 @@
-apcs_201415-hw
+AP Computer Science 2014-15 HW
 ==============
 
-hw repo
+Source code for homework.
