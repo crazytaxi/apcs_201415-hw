@@ -9,19 +9,26 @@ HW 14 - added find() and max val value
 public class ArrayStuff {
 public static int[] intarr;
 	public static void main (String[] args) {
-		intarr = new int[100];
+		intarr = new int[100];							//75 to 150
 		for (int i = 0; i < intarr.length; i++) {
 			intarr[i] = (int)(Math.ceil(Math.random() * 76.0d)) + 74;
 		}
-		int[] ia2 = new int[100];
+		int[] ia2 = new int[100];						//0 to 21
 		for (int i = 0; i < ia2.length; i++) {
 			ia2[i] = (int)(Math.floor(Math.random() * 21.0d));
 		}
+		/*		//for fun
+		int[] ia3 = new int[100000000];
+		for (int i = 0; i < ia3.length; i++) {
+			ia3[i] = (int)(Math.floor(Math.random() * 21.0d));
+		}
+		*/
 		System.out.println(find(120));		//does 120 exist in the array
 		System.out.println(maxVal(intarr));		//print max value in array
 		System.out.println(freq(intarr, 2));
-		System.out.println(mode(ia2));
-		System.out.println(fastmode(ia2));
+		//System.out.println(array_mode(ia3));
+		//System.out.println(mode(ia2));
+		System.out.println(array_mode(ia2));
 	}
 
 	public static int find (int x) {
@@ -64,7 +71,7 @@ public static int[] intarr;
 		return max[1];
 	}
 
-	public static int fastmode(int[] ia) {
+	public static int array_mode(int[] ia) {
 		int maxVal = 20;	//from 0 to 25 inclusive
 		int[] iter = new int[maxVal + 1];
 		for (int i = 0; i < ia.length; i++) {
