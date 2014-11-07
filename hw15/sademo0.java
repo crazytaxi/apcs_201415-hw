@@ -5,6 +5,12 @@ public class sademo0 {
 		sa.pString();
 		sa.add(100241);
 		sa.pString();
+		sa.add(0,123);
+		sa.pString();
+		sa.add(0,12351);
+		sa.pString();
+		sa.remove(0);
+		sa.pString();
 	}
 
 }
