@@ -25,6 +25,14 @@ public class SArray {
 		return true;
     }
 
+	public boolean addcpy (int i) {
+		int[] tmpa = new int [this.data.length + 1];
+		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
+		tmpa[tmpa.length - 1] = i;
+		this.data = tmpa;
+		return true;
+	}
+
     public void add(int index, int i){
         // adds item i  at index, shifting everything down as needed.
         // also grows as needed
