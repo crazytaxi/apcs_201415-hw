@@ -86,6 +86,19 @@ public class SArray {
 		return removed_element;
 	}
 
+        public void rmDup (int index) {
+		if ((index + 1) < this.data.length) {
+			this.rmDup((index + 1));
+			if (this.get(index) == this.get((index + 1))) {
+                                this.remove((index + 1));
+                        }
+                }
+        }
+
+	public void rmDup () {
+		this.rmDup(0);	//start the recursion
+	}
+
 	public void pString () {
 		for (int i = 0; i < this.data.length; i++) {
 			System.out.print(this.data[i] + ", ");
