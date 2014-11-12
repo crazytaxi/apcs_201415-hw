@@ -71,6 +71,15 @@ public class SArray {
 		return old;
     }
 
+	public int rmcpy(int index) {
+		int[] tmpa = new int[this.data.length - 1];
+		int removed_element = this.data[index];
+		System.arraycopy(this.data, 0, tmpa, 0, index);
+		System.arraycopy(this.data, (index + 1), tmpa, index, (this.data.length - (index + 1)));
+		this.data = tmpa;
+		return removed_element;
+	}
+
 	public int remove(int index) {
         // removes the item at index i
         // returns the old value
@@ -90,7 +99,7 @@ public class SArray {
 		if ((index + 1) < this.data.length) {
 			this.rmDup((index + 1));
 			if (this.get(index) == this.get((index + 1))) {
-                                this.remove((index + 1));
+                                this.rmcpy((index + 1));
                         }
                 }
         }
