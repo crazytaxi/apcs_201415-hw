@@ -29,7 +29,17 @@ public class WordSearch {
 	}
 	public void addWH(String s, int r, int c) {
 		for (int i = 0; i < s.toCharArray().length; i++) {
-			this.grid[r][c + i] = s.toCharArray()[i];
+			if (this.grid[r][c+i] != (char)0) {
+				if (this.grid[r][c+i] == s.toCharArray()[i]) {
+					System.out.println("letter matches!");
+				}
+				else {
+					break;
+				}
+			}
+			else {
+				this.grid[r][c + i] = s.toCharArray()[i];
+			}
 		}
 	}
 }
