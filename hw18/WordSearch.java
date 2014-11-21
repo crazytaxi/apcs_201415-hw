@@ -27,9 +27,9 @@ public class WordSearch {
 		}
 		return buffer;
 	}
-	public void addWH(String s, int r, int c, char sym) {
+	public void addWH(String s, int r, int c, int sym) {
 		for (int i = 0; i < s.toCharArray().length; i++) {
-			if (sym == 'H') {
+			if (sym == (int)'H') {
 				if (this.grid[r][c+i] != (char)0) {
 					if (this.grid[r][c+i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
@@ -42,7 +42,20 @@ public class WordSearch {
 					this.grid[r][c + i] = s.toCharArray()[i];
 				}
 			}
-			else if (sym == 'V') {
+			else if (sym == -(int)'H') {
+				if (this.grid[r][c-i] != (char)0) {
+					if (this.grid[r][c-i] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r][c - i] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == (int)'V') {
 				if (this.grid[r+i][c] != (char)0) {
 					if (this.grid[r+i][c] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
@@ -53,6 +66,71 @@ public class WordSearch {
 				}
 				else {
 					this.grid[r + i][c] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == -(int)'V') {
+				if (this.grid[r-i][c] != (char)0) {
+					if (this.grid[r-i][c] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r - i][c] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == (int)'X') {
+				if (this.grid[r+i][c+i] != (char)0) {
+					if (this.grid[r+i][c+i] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r+i][c + i] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == -(int)'X') {
+				if (this.grid[r+i][c-i] != (char)0) {
+					if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r + i][c-i] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == (int)'Y') {
+				if (this.grid[r-i][c+i] != (char)0) {
+					if (this.grid[r-i][c + i] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r - i][c + i] = s.toCharArray()[i];
+				}
+			}
+			else if (sym == -(int)'Y') {
+				if (this.grid[r-i][c-i] != (char)0) {
+					if (this.grid[r-i][c-i] == s.toCharArray()[i]) {
+						System.out.println("letter matches!");
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					this.grid[r-i][c - i] = s.toCharArray()[i];
 				}
 			}
 		}
