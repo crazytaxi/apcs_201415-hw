@@ -27,112 +27,153 @@ public class WordSearch {
 		}
 		return buffer;
 	}
-	public void addWH(String s, int r, int c, int sym) {
+	public boolean addWH(String s, int r, int c, int sym) {
 		for (int i = 0; i < s.toCharArray().length; i++) {
 			if (sym == (int)'H') {
-				if (this.grid[r][c+i] != (char)0) {
-					if (this.grid[r][c+i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
+				if ((c + s.toCharArray().length) < this.grid[0].length) {
+					if (this.grid[r][c+i] != (char)0) {
+						if (this.grid[r][c+i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
 					}
 					else {
-						break;
+						this.grid[r][c + i] = s.toCharArray()[i];
 					}
 				}
 				else {
-					this.grid[r][c + i] = s.toCharArray()[i];
+					return false;
 				}
 			}
 			else if (sym == -(int)'H') {
-				if (this.grid[r][c-i] != (char)0) {
-					if (this.grid[r][c-i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
+				if ((c - s.toCharArray().length) >= 0) {
+					if (this.grid[r][c-i] != (char)0) {
+						if (this.grid[r][c-i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
+						
+						else {
+							break;
+						}
+						
 					}
 					else {
-						break;
+						this.grid[r][c - i] = s.toCharArray()[i];
 					}
 				}
 				else {
-					this.grid[r][c - i] = s.toCharArray()[i];
+					return false;
 				}
 			}
 			else if (sym == (int)'V') {
-				if (this.grid[r+i][c] != (char)0) {
-					if (this.grid[r+i][c] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
+				if ((r + s.toCharArray().length) < this.grid.length) {
+					if (this.grid[r+i][c] != (char)0) {
+						if (this.grid[r+i][c] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
+						
+						else {		//string can't overlap with existing characters in grid
+							break;
+						}
 					}
 					else {
-						break;
+						this.grid[r + i][c] = s.toCharArray()[i];
 					}
 				}
 				else {
-					this.grid[r + i][c] = s.toCharArray()[i];
+					return false;
 				}
 			}
 			else if (sym == -(int)'V') {
-				if (this.grid[r-i][c] != (char)0) {
-					if (this.grid[r-i][c] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
+				if ((r - s.toCharArray().length) >= 0) {
+					if (this.grid[r-i][c] != (char)0) {
+						if (this.grid[r-i][c] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
+						else {
+							break;
+						}
 					}
 					else {
-						break;
+						this.grid[r - i][c] = s.toCharArray()[i];
 					}
 				}
 				else {
-					this.grid[r - i][c] = s.toCharArray()[i];
+					return false;
 				}
 			}
 			else if (sym == (int)'X') {
-				if (this.grid[r+i][c+i] != (char)0) {
-					if (this.grid[r+i][c+i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
+				if (((c + s.toCharArray().length) < this.grid[0].length) && ((r + s.toCharArray().length) < this.grid[0].length)) {
+					if (this.grid[r+i][c+i] != (char)0) {
+						if (this.grid[r+i][c+i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
+						else {
+							break;
+						}
 					}
 					else {
-						break;
+						this.grid[r+i][c + i] = s.toCharArray()[i];
 					}
 				}
 				else {
-					this.grid[r+i][c + i] = s.toCharArray()[i];
+					return false;
 				}
 			}
 			else if (sym == -(int)'X') {
-				if (this.grid[r+i][c-i] != (char)0) {
+				if (((c - s.toCharArray().length) >= 0) && ((r + s.toCharArray().length) < this.grid[0].length)) {
+					if (this.grid[r+i][c-i] != (char)0) {
 					if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
 					}
-					else {
-						break;
-					}
+						else {
+							break;
+						}
 				}
 				else {
 					this.grid[r + i][c-i] = s.toCharArray()[i];
 				}
+				}
+				else {
+					return false;
+				}
 			}
 			else if (sym == (int)'Y') {
-				if (this.grid[r-i][c+i] != (char)0) {
+				if (((c + s.toCharArray().length) < this.grid[0].length) && ((r - s.toCharArray().length) >= 0)) {
+					if (this.grid[r-i][c+i] != (char)0) {
 					if (this.grid[r-i][c + i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
 					}
-					else {
-						break;
-					}
+						else {
+							break;
+						}
 				}
 				else {
 					this.grid[r - i][c + i] = s.toCharArray()[i];
 				}
+				}
+				else {
+					return false;
+				}
 			}
 			else if (sym == -(int)'Y') {
-				if (this.grid[r-i][c-i] != (char)0) {
+				if (((r + s.toCharArray().length) >= 0) && ((r - s.toCharArray().length) >= 0)) {
+					if (this.grid[r-i][c-i] != (char)0) {
 					if (this.grid[r-i][c-i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
 					}
-					else {
-						break;
-					}
+						else {
+							break;
+						}
 				}
 				else {
 					this.grid[r-i][c - i] = s.toCharArray()[i];
 				}
+				}
+				else {
+					return false;
+				}
 			}
 		}
+		return true;
 	}
 }
