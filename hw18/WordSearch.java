@@ -45,7 +45,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == -(int)'H') {
-				if ((c - s.toCharArray().length) >= 0) {
+				if ((c - (s.toCharArray().length - 1)) >= 0) {
 					if (this.grid[r][c-i] != (char)0) {
 						if (this.grid[r][c-i] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
@@ -65,7 +65,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == (int)'V') {
-				if ((r + s.toCharArray().length) < this.grid.length) {
+				if ((r + (s.toCharArray().length - 1)) < this.grid.length) {
 					if (this.grid[r+i][c] != (char)0) {
 						if (this.grid[r+i][c] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
@@ -84,7 +84,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == -(int)'V') {
-				if ((r - s.toCharArray().length) >= 0) {
+				if ((r - (s.toCharArray().length - 1)) >= 0) {
 					if (this.grid[r-i][c] != (char)0) {
 						if (this.grid[r-i][c] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
@@ -102,7 +102,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == (int)'X') {
-				if (((c + s.toCharArray().length) < this.grid[0].length) && ((r + s.toCharArray().length) < this.grid[0].length)) {
+				if (((c + (s.toCharArray().length - 1)) < this.grid[0].length) && ((r + (s.toCharArray().length - 1)) < this.grid[0].length)) {
 					if (this.grid[r+i][c+i] != (char)0) {
 						if (this.grid[r+i][c+i] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
@@ -120,7 +120,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == -(int)'X') {
-				if (((c - s.toCharArray().length) >= 0) && ((r + s.toCharArray().length) < this.grid[0].length)) {
+				if (((c - (s.toCharArray().length - 1)) >= 0) && ((r + (s.toCharArray().length - 1)) < this.grid[0].length)) {
 					if (this.grid[r+i][c-i] != (char)0) {
 					if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
@@ -138,7 +138,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == (int)'Y') {
-				if (((c + s.toCharArray().length) < this.grid[0].length) && ((r - s.toCharArray().length) >= 0)) {
+				if (((c + (s.toCharArray().length - 1)) < this.grid[0].length) && ((r - (s.toCharArray().length - 1)) >= 0)) {
 					if (this.grid[r-i][c+i] != (char)0) {
 					if (this.grid[r-i][c + i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
@@ -156,7 +156,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == -(int)'Y') {
-				if (((r + s.toCharArray().length) >= 0) && ((r - s.toCharArray().length) >= 0)) {
+				if (((r + (s.toCharArray().length - 1)) >= 0) && ((r - (s.toCharArray().length - 1)) >= 0)) {
 					if (this.grid[r-i][c-i] != (char)0) {
 					if (this.grid[r-i][c-i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
