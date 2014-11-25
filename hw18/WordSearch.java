@@ -66,7 +66,7 @@ public class WordSearch {
 	public boolean addWH(String s, int r, int c, int sym) {
 		for (int i = 0; i < s.toCharArray().length; i++) {
 			if (sym == (int)'H') {
-				if ((c + s.toCharArray().length) < this.grid[0].length) {
+				if ((c + (s.toCharArray().length - 1)) < this.grid[0].length) {
 					if (this.grid[r][c+i] != (char)0) {
 						if (this.grid[r][c+i] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
@@ -156,7 +156,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == -(int)'X') {
-				if (((c - (s.toCharArray().length - 1)) >= 0) && ((r + (s.toCharArray().length - 1)) < this.grid[0].length)) {
+				if (((c - (s.toCharArray().length - 1)) >= 0) && ((r + (s.toCharArray().length - 1)) < this.grid.length)) {
 					if (this.grid[r+i][c-i] != (char)0) {
 					if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
 						System.out.println("letter matches!");
