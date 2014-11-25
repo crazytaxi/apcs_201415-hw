@@ -27,6 +27,42 @@ public class WordSearch {
 		}
 		return buffer;
 	}
+
+	public boolean addR (String s) {
+		for (int i = 0; i < 10; i++) {
+			int orient = 0;
+			int gen = ((int)Math.floor(Math.random() * 8));
+			if (gen == 0) {
+				orient = (int)'H';
+			}
+			else if (gen == 1) {
+				orient = -(int)'H';
+			}
+			else if (gen == 2) {
+				orient = (int)'V';
+			}
+			else if (gen == 3) {
+				orient = -(int)'V';
+			}
+			else if (gen == 4) {
+				orient = (int)'X';
+			}
+			else if (gen == 5) {
+				orient = -(int)'X';
+			}
+			else if (gen == 6) {
+				orient = (int)'Y';
+			}
+			else if (gen == 7) {
+				orient = -(int)'Y';
+			}
+			if (this.addWH(s, ((int)Math.floor(Math.random() * this.grid.length)), ((int)Math.floor(Math.random() * this.grid[0].length)), orient)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public boolean addWH(String s, int r, int c, int sym) {
 		for (int i = 0; i < s.toCharArray().length; i++) {
 			if (sym == (int)'H') {

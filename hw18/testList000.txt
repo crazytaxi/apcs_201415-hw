@@ -1,0 +1,5 @@
+location
+with
+random
+orientation
+succeeds
