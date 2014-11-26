@@ -138,7 +138,7 @@ public class WordSearch {
 				}
 			}
 			else if (sym == (int)'X') {
-				if (((c + (s.toCharArray().length - 1)) < this.grid[0].length) && ((r + (s.toCharArray().length - 1)) < this.grid[0].length)) {
+				if (((c + (s.toCharArray().length - 1)) < this.grid[0].length) && ((r + (s.toCharArray().length - 1)) < this.grid.length)) {
 					if (this.grid[r+i][c+i] != (char)0) {
 						if (this.grid[r+i][c+i] == s.toCharArray()[i]) {
 							System.out.println("letter matches!");
