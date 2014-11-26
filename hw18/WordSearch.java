@@ -158,16 +158,16 @@ public class WordSearch {
 			else if (sym == -(int)'X') {
 				if (((c - (s.toCharArray().length - 1)) >= 0) && ((r + (s.toCharArray().length - 1)) < this.grid.length)) {
 					if (this.grid[r+i][c-i] != (char)0) {
-					if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
-					}
+						if (this.grid[r+i][c-i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
 						else {
 							break;
 						}
-				}
-				else {
-					this.grid[r + i][c-i] = s.toCharArray()[i];
-				}
+					}
+					else {
+						this.grid[r + i][c-i] = s.toCharArray()[i];
+					}
 				}
 				else {
 					return false;
@@ -176,34 +176,34 @@ public class WordSearch {
 			else if (sym == (int)'Y') {
 				if (((c + (s.toCharArray().length - 1)) < this.grid[0].length) && ((r - (s.toCharArray().length - 1)) >= 0)) {
 					if (this.grid[r-i][c+i] != (char)0) {
-					if (this.grid[r-i][c + i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
-					}
+						if (this.grid[r-i][c + i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
 						else {
 							break;
 						}
-				}
-				else {
-					this.grid[r - i][c + i] = s.toCharArray()[i];
-				}
+					}
+					else {
+						this.grid[r - i][c + i] = s.toCharArray()[i];
+					}
 				}
 				else {
 					return false;
 				}
 			}
 			else if (sym == -(int)'Y') {
-				if (((r + (s.toCharArray().length - 1)) >= 0) && ((r - (s.toCharArray().length - 1)) >= 0)) {
+				if (((c - (s.toCharArray().length - 1)) >= 0) && ((r - (s.toCharArray().length - 1)) >= 0)) {
 					if (this.grid[r-i][c-i] != (char)0) {
-					if (this.grid[r-i][c-i] == s.toCharArray()[i]) {
-						System.out.println("letter matches!");
-					}
+						if (this.grid[r-i][c-i] == s.toCharArray()[i]) {
+							System.out.println("letter matches!");
+						}
 						else {
 							break;
 						}
-				}
-				else {
-					this.grid[r-i][c - i] = s.toCharArray()[i];
-				}
+					}
+					else {
+						this.grid[r-i][c - i] = s.toCharArray()[i];
+					}
 				}
 				else {
 					return false;
