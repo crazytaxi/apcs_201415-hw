@@ -2,6 +2,7 @@
 	Classic Word Search Puzzle
 	rows and columns should start from 1 (not zero)....
 */
+import java.math.*;
 
 public class WordSearch {
 	private char[][] grid;
@@ -26,6 +27,17 @@ public class WordSearch {
 			buffer = buffer + "\n";
 		}
 		return buffer;
+	}
+
+	public void fillEmpty () {
+		String buffer = new String ("abcdefghijklmnopqrstuvwxyz");
+		for (int i = 0; i < this.grid.length; i++) {
+			for (int j = 0; j < this.grid[0].length; j++) {
+				if (this.grid[i][j] == (char)0) {
+					this.grid[i][j] = buffer.toCharArray()[(int)(Math.floor(Math.random() * 26))];
+				}
+			}
+		}
 	}
 
 	public boolean addR (String s) {
