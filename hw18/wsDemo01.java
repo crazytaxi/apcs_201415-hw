@@ -11,7 +11,7 @@ public class wsDemo01 {
 		String line;
 		while ((line = read.readLine()) != null) {
 			ws.addR(line);
-			System.out.println(ws.toString());
 		}
+			System.out.println(ws.toString());
 	}
 }
