@@ -76,7 +76,7 @@ public class OSArray extends SArray {
 			}
 			else if (super.get(0).compareTo(s) > 0) {
 			String[] tmpa = new String [super.size() + 1];
-			for (int a = 1; a < super.data.length; a++) {
+			for (int a = 1; a < (super.data.length + 1); a++) {
 				tmpa[a] = super.data[a - 1];
 			}
 			tmpa[0] = new String(s);
