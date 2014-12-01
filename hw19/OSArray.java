@@ -72,7 +72,7 @@ public class OSArray extends SArray {
 			}
 			tmpa[tmpa.length - 1] = new String(s);
 			super.data = tmpa;
-			System.out.println("nothing added");
+			//System.out.println("nothing added");
 			}
 			else if (super.get(0).compareTo(s) > 0) {
 			String[] tmpa = new String [super.size() + 1];
@@ -81,7 +81,7 @@ public class OSArray extends SArray {
 			}
 			tmpa[0] = new String(s);
 			super.data = tmpa;
-			System.out.println("nothing added");
+			//System.out.println("nothing added");
 			}
 		}
 		return true;
