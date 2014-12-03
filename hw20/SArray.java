@@ -27,13 +27,6 @@ public class SArray {
     }
 
 	public void isort (String s) {
-		/*
-		if (this.data.length < 1) {
-			this.data = new String [1];
-			this.data[0] = new String(s);
-		}
-		else {
-*/
 		String[] tmpa = new String [this.data.length + 1];
 		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
 		tmpa[tmpa.length - 1] = new String ("");		//the new element is null, we want a string object
@@ -46,7 +39,6 @@ public class SArray {
 				this.add(i, new String(s));
 			}
 		}
-		//}
 	}
 
 	public boolean addcpy (String s) {
