@@ -26,6 +26,29 @@ public class SArray {
 		return true;
     }
 
+	public void isort (String s) {
+		/*
+		if (this.data.length < 1) {
+			this.data = new String [1];
+			this.data[0] = new String(s);
+		}
+		else {
+*/
+		String[] tmpa = new String [this.data.length + 1];
+		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
+		tmpa[tmpa.length - 1] = new String ("");		//the new element is null, we want a string object
+		this.data = tmpa;
+		for (int i = 0; i < this.data.length; i++) {
+			if (this.get(i).equals(new String(""))) {
+				this.set(i, new String(s));
+			}
+			if (this.get(i).compareTo(s) > 0) {
+				this.add(i, new String(s));
+			}
+		}
+		//}
+	}
+
 	public boolean addcpy (String s) {
 		String[] tmpa = new String [this.data.length + 1];
 		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
@@ -123,5 +146,6 @@ public class SArray {
 			System.out.print(this.data[i] + ", ");
 		}
 		System.out.println();
+		//System.out.println("Size: " + this.data.length);
 	}
 }
