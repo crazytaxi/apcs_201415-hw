@@ -27,17 +27,21 @@ public class SArray {
     }
 
 	public void isort (String s) {
-		String[] tmpa = new String [this.data.length + 1];
-		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
-		tmpa[tmpa.length - 1] = new String ("");		//the new element is null, we want a string object
-		this.data = tmpa;
+		//String[] tmpa = new String [this.data.length];
+		//System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
+		boolean entry = false;
+		//tmpa[tmpa.length - 1] = new String ("");		//the new element is null, we want a string object
 		for (int i = 0; i < this.data.length; i++) {
-			if (this.get(i).equals(new String(""))) {
-				this.set(i, new String(s));
-			}
-			if (this.get(i).compareTo(s) > 0) {
+			//if (this.get(i).equals(new String(""))) {
+				//this.set(i, new String(s));
+			//}
+			if (this.get(i).compareTo(s) < 0 && !entry) {
 				this.add(i, new String(s));
+				entry = true;
 			}
+		}
+		if (!entry) {
+			this.add(new String(s));	
 		}
 	}
 
