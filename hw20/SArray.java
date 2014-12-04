@@ -5,44 +5,33 @@
 
 public class SArray {
     String[] data;
-    //int last;
+
 
 	public SArray() {
-	// set up the initial instance variables
 		this.data = new String [] {};
-	//this.last = this.data.length;
-    }
+	}
 
-    public boolean add(String s){
-        // adds an item to the end of the list, grow if needed
-        // returns true
+	public boolean add(String s){
 		String[] tmpa = new String [this.data.length + 1];
 		for (int a = 0; a < this.data.length; a++) {
 			tmpa[a] = this.data[a];
 		}
 		tmpa[tmpa.length - 1] = new String(s);
 		this.data = tmpa;
-		//this.last = tmpa.length;
 		return true;
-    }
+	}
 
 	public void isort (String s) {
-		//String[] tmpa = new String [this.data.length];
-		//System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
 		boolean entry = false;
-		//tmpa[tmpa.length - 1] = new String ("");		//the new element is null, we want a string object
 		for (int i = 0; i < this.data.length; i++) {
-			//if (this.get(i).equals(new String(""))) {
-				//this.set(i, new String(s));
-			//}
-			if (this.get(i).compareTo(s) < 0 && entry == false) {
-				this.add(i, new String(s));
-				entry = true;
+			if (this.get(i).compareTo(s) > 0 && entry == false) {
+				this.add(i, s);
+				entry = !entry;
+				break;
 			}
 		}
 		if (entry == false) {
-			System.out.println("added: " + s);
-			this.add(new String(s));	
+			this.add(s);
 		}
 	}
 
@@ -63,27 +52,23 @@ public class SArray {
 		return true;
 	}
 
-    public void add(int index, String s){
-        // adds item i  at index, shifting everything down as needed.
-        // also grows as needed
+	public void add(int index, String s){
 		String[] tmpa = new String [this.data.length + 1];
 		for (int a = 0; a < index; a++) {
 			tmpa[a] = this.data[a];
 		}
-		tmpa[index] = new String(s);	//set element at index to the item given
+		tmpa[index] = s;	//set element at index to the item given
 		for (int a = (index + 1); a < tmpa.length; a++) {
 			tmpa[a] = this.data[a - 1];
 		}
 		this.data = tmpa;
-    }
+	}
 
-    public int size() {
-        // returns the number of items in the list (not the array size)
+	public int size() {
 		return this.data.length;
-    }
+	}
 
-    public String get(int index) {
-		// returns the item at location index of the lsit
+	public String get(int index) {
 		if (index >= this.data.length) {
 			return null;
 		}
@@ -91,15 +76,13 @@ public class SArray {
 			return null;
 		}
 		return this.data[index];
-    }
+	}
 
-    public String set(int index, String s){
-        // sets the item at location index to value i
-        // returns the old value.
+	public String set(int index, String s){
 		String old = this.data[index];
 		this.data[index] = new String (s);
 		return old;
-    }
+	}
 
 	public String rmcpy(int index) {
 		String[] tmpa = new String [this.data.length - 1];
