@@ -35,12 +35,13 @@ public class SArray {
 			//if (this.get(i).equals(new String(""))) {
 				//this.set(i, new String(s));
 			//}
-			if (this.get(i).compareTo(s) < 0 && !entry) {
+			if (this.get(i).compareTo(s) < 0 && entry == false) {
 				this.add(i, new String(s));
 				entry = true;
 			}
 		}
-		if (!entry) {
+		if (entry == false) {
+			System.out.println("added: " + s);
 			this.add(new String(s));	
 		}
 	}
