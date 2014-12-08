@@ -35,6 +35,19 @@ public class SArray {
 		}
 	}
 
+	public void bsort(String s) { 
+		this.add(s);
+		for (int pass = 1; pass < this.data.length; pass++ ) {
+			for (int element = 0; element < this.data.length - 1; element++ ) {
+				if (this.get(element).compareTo(this.get(element+1)) > 0 ) {
+					String tmp = this.get(element);
+					this.set(element, this.get(element+1));
+					this.set(element+1, tmp);
+				}
+			}
+		}
+	}
+
 	public boolean addcpy (String s) {
 		String[] tmpa = new String [this.data.length + 1];
 		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
