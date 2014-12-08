@@ -4,11 +4,19 @@
 */
 
 public class SArray {
-    String[] data;
+    private String[] data;
 
 
 	public SArray() {
 		this.data = new String [] {};
+	}
+
+	public SArray(SArray s_a) {
+		System.arraycopy(s_a.getArray(),0,this.data,0, s_a.getArray().length);
+	}
+
+	public String[] getArray() {
+		return this.data;
 	}
 
 	public boolean add(String s){
@@ -35,7 +43,7 @@ public class SArray {
 		}
 	}
 
-	public void bsort(String s) { 
+	public void bsort(String s) {
 		this.add(s);
 		for (int pass = 1; pass < this.data.length; pass++ ) {
 			for (int element = 0; element < this.data.length - 1; element++ ) {
