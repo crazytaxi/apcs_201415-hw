@@ -48,6 +48,24 @@ public class SArray {
 		}
 	}
 
+	public void ssort(String s) {
+		this.add(s);
+		for (int j = 0; j < this.data.length-1; j++) {
+		    int min_index = j;
+		    for (int i = j+1; i < this.data.length; i++) { 
+			if (this.get(i).compareTo(this.get(min_index)) < 0) {
+			    min_index = i;
+			}
+		    }
+		 
+		    if(min_index != j) {
+			String tmp = this.get(j);
+			this.set(j, this.get(min_index));
+			this.set(min_index, tmp);
+		    }
+		}
+	}
+
 	public boolean addcpy (String s) {
 		String[] tmpa = new String [this.data.length + 1];
 		System.arraycopy(this.data, 0, tmpa, 0, this.data.length);
