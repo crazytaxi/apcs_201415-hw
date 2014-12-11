@@ -27,6 +27,15 @@ public class Searching{
 		return this.rbsearch(this.items, o, 0, (this.items.length - 1));
 	}
 
+	public Object lsearch(Object o) {
+		for (int i = 0; i < this.items.length; i++) {
+			if (this.items[i].equals(o)) {
+				return this.items[i];
+			}
+		}
+		return null;
+	}
+
 	public Object rbsearch(Object[] it, Object o, int imin, int imax) {
 		if (imax < imin) {
 			return null;
