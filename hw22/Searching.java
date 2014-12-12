@@ -23,6 +23,25 @@ public class Searching{
 		return 1;
 	}
 
+	public Object bsearch(Object o){
+		int imin = 0;
+		int imax = this.items.length - 1;
+		while (imax >= imin) {
+			int imid = (imin + imax)/2;
+			if(this.items[imid].equals(o)){
+				return this.items[imid];
+			}
+			else if ((this.items[imid].toString()).compareTo(o.toString()) < 0){
+				imin = imid + 1;
+			}
+			else {
+				imax = imid - 1;
+			}
+		}
+		return null;
+	}
+
+
 	public Object rbsearch(Object o) {
 		return this.rbsearch(this.items, o, 0, (this.items.length - 1));
 	}
