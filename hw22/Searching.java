@@ -1,3 +1,5 @@
+/* hw 22 - objects that implement comparable */
+ 
 import java.util.*;
 
 public class Searching{
