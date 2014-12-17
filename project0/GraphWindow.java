@@ -1,3 +1,7 @@
+/* constructor class for the graphical window
+	@author Qijia (Michael) Jin
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 
